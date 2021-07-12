@@ -170,7 +170,7 @@ class EmployeeTable extends React.Component {
     let rowDel = this.props.onRowDel;
     let filterText = this.props.filterText;
     let employee = this.props.employees.map(function(employee) {
-      if (employee.name.indexOf(filterText) === -1) {
+      if (employee.name.indexOf(filterText) === -1 && employee.surname.indexOf(filterText) === -1 && employee.date.indexOf(filterText) === -1 && employee.pos.indexOf(filterText) === -1 && employee.num.indexOf(filterText) === -1) {
         return;
       }
       return (<EmployeeRow onEmployeeTableUpdate={onEmployeeTableUpdate} employee={employee} onDelEvent={rowDel.bind(this)} key={employee.id}/>)
